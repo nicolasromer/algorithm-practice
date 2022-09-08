@@ -1,4 +1,5 @@
-'use strict';
+const l = require('./logUtil.js');
+const testRunner = require('./testRunner.js');
 
 /*
  * Complete the 'rotateLeft' function below.
@@ -10,9 +11,14 @@
  */
 
 function rotateLeft(d, arr) {
-    // Write your code here
+    const sliceIndex = d % arr.length;
+    const tail = arr.slice(0, sliceIndex);
+    const head = arr.slice(sliceIndex, arr.length);
 
+
+    return [...head, ...tail];
 }
+
 
 const testCases = [
     {
@@ -23,11 +29,15 @@ const testCases = [
         name: 'rotate 1 position',
         input: [1, [1,2,3]],
         expected: [2,3,1],
+    },{
+        name: 'rotate more positions than array length',
+        input: [9999, [1,2,3,4,5,6,7]],
+        expected: [4,5,6,7,1,2,3],
     },
 ];
 
 function main() {
-    runTests(rotateLeft, testCases);
+    testRunner(rotateLeft, testCases);
 }
 
 main();

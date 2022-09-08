@@ -1,18 +1,19 @@
-const matchArrays = require('./matchArrays.js');
+const matchArrays = require('./arraysMatch.js');
 /*
 [
 	{
+	name: ?string
 	input: []
 	expected: any 
 	}
 ]
 */
-const testRunner = (testFunction, testCases) => testCases.forEach((testCase, i) => {
-	console.log('Test #' + (i+1) + testCase.name || '');
+module.exports = (testFunction, testCases) => testCases.forEach(({name, input, expected}, i) => {
+	console.log('Test #' + (i+1) + ' ' + (name || ''));
 
-	const actual = testFunction(...testCase.input);
+	const actual = testFunction(...input);
 	
 	console.log('actual: ', actual);
-	console.log('expected: ', testCase.expected);
+	console.log('expected: ', expected);
 	console.log(matchArrays(expected, actual) ? 'PASS' : 'FAIL');
 })
