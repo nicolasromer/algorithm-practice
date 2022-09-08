@@ -15,7 +15,6 @@ function rotateLeft(d, arr) {
     const tail = arr.slice(0, sliceIndex);
     const head = arr.slice(sliceIndex, arr.length);
 
-
     return [...head, ...tail];
 }
 
