@@ -1,5 +1,5 @@
-const l = require('./logUtil.js');
-const testRunner = require('./testRunner.js');
+const l = require('./utils/logUtil.js');
+const testRunner = require('.utils/testRunner.js');
 
 /*
  * Complete the 'rotateLeft' function below.
