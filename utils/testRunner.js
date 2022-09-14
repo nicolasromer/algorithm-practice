@@ -13,6 +13,7 @@ module.exports = (testFunction, testCases) => testCases.forEach(({name, input, e
 
 	const actual = testFunction(...input);
 	
+	console.log('input: ', input);
 	console.log('actual: ', actual);
 	console.log('expected: ', expected);
 	console.log(matchArrays(expected, actual) ? 'PASS' : 'FAIL');
