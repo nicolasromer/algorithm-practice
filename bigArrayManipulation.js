@@ -15,7 +15,7 @@ const testRunner = require('./utils/testRunner.js');
 function bigArrayManipulation(n, queries) {
     let maxValue = 0;
     let array = Array(n + 1).fill(0);
-l(array)
+
     // [0,{start: 100, end: 0}, 0, 0, {end:100, start: 0}, 0, 0]
 
 

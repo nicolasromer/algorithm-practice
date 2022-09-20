@@ -10,7 +10,7 @@ const testRunner = require('./utils/testRunner.js');
  *  2. 2D_INTEGER_ARRAY queries
  */
 
-// solution 1: operation tuples
+// solution 1: operation tuples, maxes out at a million items
 
 function arrayManipulation(n, queries) {
     let maxValue = 0;

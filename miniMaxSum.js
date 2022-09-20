@@ -5,11 +5,6 @@ const miniMaxSum = (arr) => {
      const sorted = arr.sort();   
      const minSum = sorted.slice(0, 4).reduce((sum, num) => sum + num, 0);
      const maxSum = sorted.slice(arr.length-4).reduce((sum, num) => sum + num, 0);
-    
-    
-    
-     
-     
 
      return [minSum, maxSum];
 }
