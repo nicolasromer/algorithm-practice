@@ -9,12 +9,18 @@ const matchArrays = require('./arraysMatch.js');
 ]
 */
 module.exports = (testFunction, testCases) => testCases.forEach(({name, input, expected}, i) => {
-	console.log('Test #' + (i+1) + ' ' + (name || ''));
+	console.log((i+1) + '. ' + (name || ''));
 
 	const actual = testFunction(...input);
 	
-	console.log('input: ', input);
+	const passes = matchArrays(expected, actual);
+
+	if (passes) {
+		console.log('PASS with expected result: '+ actual);
+		return;
+	}
+	
+	console.log('FAIL:');
 	console.log('actual: ', actual);
 	console.log('expected: ', expected);
-	console.log(matchArrays(expected, actual) ? 'PASS' : 'FAIL');
 })
