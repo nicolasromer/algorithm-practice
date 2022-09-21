@@ -4,8 +4,10 @@ const testRunner = require('./utils/testRunner.js');
 
 const difference = (a,b) => Math.abs(a-b);
 const diagonalDifference = (matrix) => difference(...matrix.reduce((res, arr, i) => {
-	res[0] += arr[i];
+	
+    res[0] += arr[i];
 	res[1] += arr[arr.length -1 - i];
+
 	return res;
 }, [0,0]));
 
